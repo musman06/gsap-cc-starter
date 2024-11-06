@@ -3,6 +3,23 @@ import gsap from "gsap"
 
 const GsapStagger = () => {
   // TODO: Implement the gsap.stagger() method
+  useGSAP(() => {
+    gsap.to(".stagger-box", {
+      y: 50,
+      repeat: -1,
+      duration: 2,
+      yoyo: true,
+      rotationZ: 25,
+      
+      stagger: {
+        amount: 1.5,
+        grid: [1,1],
+        axis: "y",
+        from: "start",
+        ease: "circ.inOut",
+      }
+    })
+  }, [])
 
   return (
     <main>
